@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://63podtnol7hr"]
 
-[ext_resource type="Script" uid="uid://bj0efpnd3iauo" path="res://scenes/levels/longwalk.gd" id="1_8lvri"]
+[ext_resource type="Script" uid="uid://bj0efpnd3iauo" path="res://scripts/levels/longwalk.gd" id="1_8lvri"]
 [ext_resource type="PackedScene" uid="uid://i0eal1ome5m0" path="res://assets/tilesets/levelparts1.tscn" id="1_o7p7u"]
 [ext_resource type="PackedScene" uid="uid://dt3anowi1fbkx" path="res://scenes/player.tscn" id="2_6ta8x"]
 [ext_resource type="Texture2D" uid="uid://clkbf51takd7f" path="res://assets/backgrounds/longwalk/foregroundd8.png" id="3_0ynl5"]

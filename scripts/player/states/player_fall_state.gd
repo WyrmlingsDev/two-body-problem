@@ -7,9 +7,11 @@ func enter(_prev_state: PlayerState) -> void:
 		player.animation.play("jump")
 
 func handle_input(_event: InputEvent) -> void:
+	player.real_velocity.x = 0.0
+	
 	var direction := 0.0
 	if player.is_alive and not player.disable_inputs:
-		direction = Input.get_axis("ui_left", "ui_right")
+		direction = Input.get_axis("Left", "Right")
 		
 	if direction != 0.0:
 		player.real_velocity.x = direction * player.SPEED
@@ -24,7 +26,7 @@ func handle_input(_event: InputEvent) -> void:
 		return
 
 func physics_update(_delta: float) -> void:
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("Left", "Right")
 	
 	# fall to wall grab
 	# must be facing and going toward a grabbable object to hook on

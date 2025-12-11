@@ -56,7 +56,8 @@ func _ready() -> void:
 		"revive": preload("res://scripts/player/states/player_revive_state.gd").new(),
 		"fall": preload("res://scripts/player/states/player_fall_state.gd").new(),
 		"dead": preload("res://scripts/player/states/player_dead_state.gd").new(),
-		"dash": preload("res://scripts/player/states/player_dash_state.gd").new()
+		"dash": preload("res://scripts/player/states/player_dash_state.gd").new(),
+		"sleep": preload("res://scripts/player/states/player_sleep_state.gd").new()
 	}
 
 	for state in states.values():
@@ -136,11 +137,6 @@ func _on_node_added(node):
 		node.player_died.connect(_on_player_died)
 		
 func _on_player_died(_body, hazard: String):
-	Global.lives -= 1
-	var lives_ui := get_node_or_null("UI/Lives/Amount")
-	if lives_ui != null:
-		lives_ui.text = str(Global.lives)
-	
 	change_state("dead")
 	
 	# electricity hazards do not spawn bodies

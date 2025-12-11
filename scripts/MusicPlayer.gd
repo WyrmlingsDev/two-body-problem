@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 func _ready() -> void:
 	connect("finished", Callable(self, "_on_music_finished"))

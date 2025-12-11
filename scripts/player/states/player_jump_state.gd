@@ -32,10 +32,11 @@ func handle_input(_event):
 
 func physics_update(delta):
 	player.real_velocity += player.get_gravity() * 1.1 * delta
+	player.real_velocity.x = 0.0
 	
 	# horizontal air control
 	if player.is_alive and not player.disable_inputs:
-		direction = Input.get_axis("ui_left", "ui_right")
+		direction = Input.get_axis("Left", "Right")
 	if direction != 0.0:
 		player.real_velocity.x = direction * player.SPEED
 		player.animation.flip_h = player.real_velocity.x < 0.0

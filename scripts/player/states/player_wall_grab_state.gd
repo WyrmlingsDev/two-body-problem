@@ -14,7 +14,7 @@ func handle_input(_event: InputEvent) -> void:
 	player.real_velocity = Vector2.ZERO
 	
 	# cancel wall grab if a direction is pressed
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("Left", "Right")
 	if direction != 0.0 and sign(direction) != wall_direction:
 		player.change_state("fall")
 

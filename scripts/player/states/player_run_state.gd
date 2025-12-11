@@ -9,7 +9,7 @@ func enter(_prev_state):
 		player.run_transition_counter = 0.07
 		player.animation.play("run_start")
 		
-func exit(next_state: PlayerState):
+func exit(_next_state: PlayerState):
 	player.animation.offset.y = 0
 	
 func handle_input(_event):
@@ -25,7 +25,7 @@ func handle_input(_event):
 func physics_update(delta):
 	var direction := 0.0
 	if player.is_alive and not player.disable_inputs:
-		direction = Input.get_axis("ui_left", "ui_right")
+		direction = Input.get_axis("Left", "Right")
 		
 	# Horizontal motion
 	if direction != 0.0:

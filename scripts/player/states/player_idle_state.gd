@@ -11,8 +11,12 @@ func enter(_prev_state):
 func handle_input(_event):
 	if player.disable_inputs or not player.is_alive:
 		return
+		
+	if Input.is_action_just_pressed("Sleep") and player.is_on_floor():
+		player.change_state("sleep")
+		return
 	
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("Left", "Right")
 	
 	if Input.is_action_just_pressed("ui_accept") and player.is_on_floor():
 		player.change_state("jump")
@@ -24,8 +28,6 @@ func handle_input(_event):
 		
 	if direction != 0.0:
 		player.change_state("run")
-
-
 
 func physics_update(delta):
 	# airborne transitions

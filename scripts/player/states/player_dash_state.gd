@@ -12,8 +12,8 @@ func enter(_prev_state):
 	player.animation.play("dash")
 	player.has_dashed = true
 	
-	if Input.get_axis("ui_left", "ui_right") != 0:
-		direction = Input.get_axis("ui_left", "ui_right")
+	if Input.get_axis("Left", "Right") != 0:
+		direction = Input.get_axis("Left", "Right")
 		
 	player.real_velocity.x = direction * DASH_SPEED
 	player.real_velocity.y = 0

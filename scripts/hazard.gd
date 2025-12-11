@@ -27,10 +27,11 @@ func _spawn_death_screen(player: Node2D) -> void:
 	if cam == null:
 		return
 		
-	if Global.lives <= 0:
-		var game_over = preload("res://scenes/menu/game_over_screen.tscn")
-		get_tree().call_deferred("change_scene_to_packed", game_over)
-		return
+	Global.deaths += 1
+		
+	#var game_over = preload("res://scenes/menu/game_over_screen.tscn")
+	#get_tree().call_deferred("change_scene_to_packed", game_over)
+	#return
 		
 	if cam.get_node_or_null("DeathScreen") == null and death_screen_scene:
 		var ds = death_screen_scene.instantiate()

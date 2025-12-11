@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu8dcus8nm4on"]
+[gd_scene load_steps=6 format=3 uid="uid://bu8dcus8nm4on"]
 
 [ext_resource type="Texture2D" uid="uid://da4cn4dsxx2gm" path="res://assets/backgrounds/afterlifebackground.png" id="1_dwo6e"]
 [ext_resource type="FontFile" uid="uid://byxax6tlb31sx" path="res://assets/fonts/pixelify/PixelifySans-VariableFont_wght.ttf" id="2_mqh5l"]
-[ext_resource type="Texture2D" uid="uid://rn45mma4ftjt" path="res://assets/reanimate_last.png" id="3_mqh5l"]
-[ext_resource type="Script" uid="uid://n0oxx6vwx36l" path="res://scripts/death_screen_sprite.gd" id="4_7ns25"]
+[ext_resource type="Script" uid="uid://di1fteokc4tur" path="res://scripts/ui/message.gd" id="3_sfg43"]
 [ext_resource type="Texture2D" uid="uid://bkt61dy3kt6ii" path="res://assets/mainframebigface3.png" id="5_gwety"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7ns25"]
-font = ExtResource("2_mqh5l")
 
 [sub_resource type="LabelSettings" id="LabelSettings_gwety"]
 font = ExtResource("2_mqh5l")
@@ -24,37 +20,31 @@ offset_right = 717.0
 offset_bottom = 414.0
 texture = ExtResource("1_dwo6e")
 
-[node name="Message" type="Label" parent="."]
-offset_left = 104.0
-offset_top = 81.0
-offset_right = 409.0
-offset_bottom = 108.0
+[node name="Message" type="RichTextLabel" parent="."]
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 484.0
+offset_bottom = 222.0
+theme_override_fonts/normal_font = ExtResource("2_mqh5l")
+theme_override_font_sizes/normal_font_size = 12
 text = "Death is not your end."
-label_settings = SubResource("LabelSettings_7ns25")
 horizontal_alignment = 1
-autowrap_mode = 3
+vertical_alignment = 1
+script = ExtResource("3_sfg43")
 
 [node name="Reanimate" type="Label" parent="."]
-offset_left = 137.0
-offset_top = 305.0
-offset_right = 379.0
-offset_bottom = 328.0
+offset_left = 132.0
+offset_top = 325.0
+offset_right = 374.0
+offset_bottom = 348.0
 text = "Press Backspace to Reanimate"
 label_settings = SubResource("LabelSettings_gwety")
 horizontal_alignment = 1
 
-[node name="Sprite" type="TextureRect" parent="."]
-offset_left = 217.0
-offset_top = 179.0
-offset_right = 291.0
-offset_bottom = 253.0
-texture = ExtResource("3_mqh5l")
-script = ExtResource("4_7ns25")
-
 [node name="Mainframe" type="TextureRect" parent="."]
-offset_left = 144.0
-offset_top = 74.0
-offset_right = 391.0
-offset_bottom = 221.0
+offset_left = 143.0
+offset_top = 204.0
+offset_right = 390.0
+offset_bottom = 351.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_gwety")
